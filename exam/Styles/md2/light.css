@@ -8,23 +8,23 @@
     background-color: #E8DEF8; /* 按钮背景颜色 */
     color: #000000; /* 按钮文字颜色 */
     border: none; /* 按钮边框样式 */
-    border-radius: 20px; /* 按钮圆角大小 */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* 按钮阴影 */
+    border-radius: 4px; /* 按钮圆角大小 */
+    box-shadow: none; /* 按钮阴影 */
     transition: all 0.2s ease; /* 背景颜色和缩放的过渡效果 */
     z-index: 1001; /* 按钮层级 */
 }
 
 #return-btn:hover {
-    background-color: #D0BCFF; /* 悬停时的背景颜色 */
-    transform: translateY(-1px); /* 悬停时向上移动 1px */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* 悬停时的阴影效果 */
+    background-color: #ede7f6; /* 悬停时的背景颜色 */
+    transform: none; /* 悬停时向上移动 1px */
+    box-shadow: none; /* 悬停时的阴影效果 */
 }
 
 body {
     font-family: 'Roboto', 'HarmonyOS Sans SC', sans-serif;
     margin: 0;
     padding: 0;
-    background: #FFFBFE;
+    background: #fafafa;
     color: #1C1B1F;
     overflow: auto;
 }
@@ -39,19 +39,19 @@ body::-webkit-scrollbar {
     right: 20px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 8px;
     z-index: 1001;
 }
 
 #fullscreen-btn, #settings-btn, #reminder-settings-btn {
-    padding: 12px 24px;
+    padding: 8px 16px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
-    border-radius: 20px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    box-shadow: none;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
@@ -79,18 +79,18 @@ body::-webkit-scrollbar {
 }
 
 #fullscreen-btn:hover, #settings-btn:hover, #reminder-settings-btn:hover {
-    background-color: #D0BCFF;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background-color: #d1c4e9;
+    transform: none;
+    box-shadow: none;
 }
 
 .container {
-    padding: 24px;
-    max-width: 1400px;
+    padding: 16px;
+    max-width: 1200px;
     margin: auto;
-    background-color: #F7F2FA;
-    border-radius: 28px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(60,60,60,0.08);
 }
 
 h1 {
@@ -113,35 +113,35 @@ h1 {
 
 #message {
     font-size: 1.8rem;
-    color: #6750A4;
+    color: #512da8;
     margin-bottom: 24px;
 }
 
 .content {
     display: flex;
     justify-content: space-between;
-    gap: 24px;
+    gap: 12px;
 }
 
 .left-column, .right-column {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
 }
 
 .left-column {
-    width: 45%;
+    width: 48%;
 }
 
 .right-column {
-    width: 50%;
+    width: 48%;
 }
 
 .clock-section, .info-section, .right-column {
-    background-color: #FFFFFF;
-    padding: 24px;
-    border-radius: 28px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(60,60,60,0.06);
 }
 
 .info-section {
@@ -151,81 +151,82 @@ h1 {
 #current-time {
     font-size: 8rem;
     text-align: center;
-    color: #6750A4;
+    color: #512da8;
     margin: 0;
     font-weight: 400;
 }
 
 #current-subject, #exam-timing, #remaining-time, #status {
     font-size: 3rem;
-    margin: 16px 0;
+    margin: 8px 0;
     text-align: left;
     color: #1C1B1F;
 }
 
 #paper-info {
     font-size: 3rem;
-    margin: 16px 0;
+    margin: 8px 0;
     text-align: left;
     color: #1C1B1F;
 }
 
 #exam-papers, #answer-sheets {
-    margin: 10px 0;
+    margin: 4px 0;
 }
 
 table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin-top: 24px;
-    background-color: #FFFFFF;
-    border-radius: 16px;
+    margin-top: 12px;
+    background-color: #fff;
+    border-radius: 4px;
     overflow: hidden;
+    box-shadow: none;
 }
 
 th, td {
-    padding: 1px;
+    padding: 0.5em;
     font-size: 1.8rem;
     text-align: center;
-    border-bottom: 1px solid #E8DEF8;
+    border-bottom: 1px solid #ede7f6;
 }
 
 th {
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
     font-weight: 500;
 }
 
 tr:hover {
-    background-color: #F7F2FA;
+    background-color: #f3e5f5;
 }
 
 .exam-status-tag {
-    padding: 2px 4px;
-    border-radius: 3px;
-    font-size: 1.2rem;
+    padding: 1px 4px;
+    border-radius: 2px;
+    font-size: 0.9rem;
     font-weight: 500;
 }
 
 .exam-status-进行中 {
-    background-color: #DDF4D7;
-    color: #365534;
+    background-color: #c8e6c9;
+    color: #388e3c;
 }
 
 .exam-status-即将开始 {
-    background-color: #FFF2D6;
-    color: #594300;
+    background-color: #fff9c4;
+    color: #fbc02d;
 }
 
 .exam-status-已结束 {
-    background-color: #FFDAD6;
-    color: #5C1130;
+    background-color: #ffcdd2;
+    color: #c62828;
 }
 
 .exam-status-未开始 {
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
 #settings-modal {
@@ -236,19 +237,19 @@ tr:hover {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.3);
-    backdrop-filter: blur(8px);
+    background-color: rgba(0,0,0,0.18);
+    backdrop-filter: none;
 }
 
 #settings-modal-content {
-    background: #FFFFFF;
-    padding: 32px 48px 32px 32px;
-    margin: 32px auto;
-    border-radius: 28px;
-    width: 600px;
-    max-height: 60vh;
+    background: #fff;
+    padding: 20px 24px;
+    margin: 40px auto;
+    border-radius: 4px;
+    width: 400px;
+    max-height: 70vh;
     overflow-y: auto;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(60,60,60,0.12);
 }
 
 #settings-modal-content::-webkit-scrollbar {
@@ -261,9 +262,9 @@ tr:hover {
 }
 
 #settings-modal-content::-webkit-scrollbar-thumb {
-    background: #E8DEF8;
-    border-radius: 8px;
-    border: 2px solid #FFFFFF;
+    background: #ede7f6;
+    border-radius: 4px;
+    border: none;
 }
 
 #settings-modal-content::-webkit-scrollbar-thumb:hover {
@@ -273,48 +274,49 @@ tr:hover {
 #settings-modal-content h3 {
     margin: 0 0 24px;
     color: #1C1B1F;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 #settings-modal-content label {
     display: flex;
     align-items: center;
-    gap: 16px;
-    margin: 16px 0;
-    font-size: 16px;
+    gap: 8px;
+    margin: 8px 0;
+    font-size: 14px;
     color: #1C1B1F;
 }
 
 #settings-modal-content input[type="number"],
 #settings-modal-content input[type="text"] {
-    font-size: 1.8rem;
-    padding: 12px 16px;
-    margin: 8px 0 24px;
+    font-size: 1rem;
+    padding: 8px 12px;
+    margin: 4px 0 12px;
     width: 100%;
     box-sizing: border-box;
-    border: 2px solid #E8DEF8;
-    border-radius: 12px;
-    background-color: #FFFFFF;
-    color: #1C1B1F;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #1a237e;
     transition: all 0.2s ease;
 }
 
 #settings-modal-content input:focus {
     outline: none;
-    border-color: #6750A4;
-    background-color: #F7F2FA;
+    border-color: #512da8;
+    background-color: #f3e5f5;
 }
 
 .button-group {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
-    margin-top: 32px;
+    gap: 8px;
+    margin-top: 16px;
     position: relative;
-    background-color: #FFFFFF;
-    padding: 16px 0;
-    border-top: 1px solid #E8DEF8;
+    background-color: #fff;
+    padding: 8px 0;
+    border-top: 1px solid #ede7f6;
+    border-radius: 0 0 4px 4px;
 }
 
 #save-settings-btn, #close-settings-btn {
@@ -334,9 +336,9 @@ tr:hover {
 }
 
 #save-settings-btn, #close-settings-btn {
-    padding: 12px 24px;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 500;
     border: none;
     cursor: pointer;
@@ -344,43 +346,47 @@ tr:hover {
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: #ede7f6;
+    color: #1a237e;
+    box-shadow: none;
 }
 
 #save-settings-btn {
-    background-color: #6750A4;
-    color: #FFFFFF;
+    background-color: #512da8;
+    color: #fff;
 }
 
 #close-settings-btn {
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
 #save-settings-btn:hover, #close-settings-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background-color: #d1c4e9;
+    transform: none;
+    box-shadow: none;
 }
 
 .error-container {
     position: fixed;
-    bottom: 24px;
+    bottom: 16px;
     left: 50%;
     transform: translateX(-50%);
-    background: #FFDAD6;
-    color: #5C1130;
-    padding: 16px 24px;
-    border-radius: 16px;
+    background: #ffcdd2;
+    color: #c62828;
+    padding: 8px 16px;
+    border-radius: 4px;
     display: none;
     z-index: 10001;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(60,60,60,0.08);
     animation: slideUp 0.3s ease;
 }
 
 .switch {
     position: relative;
     display: inline-block;
-    width: 52px;
-    height: 32px;
+    width: 36px;
+    height: 20px;
 }
 
 .slider {
@@ -390,90 +396,90 @@ tr:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #E8DEF8;
+    background-color: #ede7f6;
     transition: .3s;
-    border-radius: 16px;
+    border-radius: 10px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 24px;
-    width: 24px;
-    left: 4px;
-    bottom: 4px;
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
     background-color: #FFFFFF;
     transition: .3s;
     border-radius: 50%;
 }
 
 input:checked + .slider {
-    background-color: #6750A4;
+    background-color: #512da8;
 }
 
 input:checked + .slider:before {
-    transform: translateX(20px);
+    transform: translateX(16px);
     background-color: #FFFFFF;
 }
 
 .config-file-container {
-    margin: 24px 0;
-    padding: 24px;
-    border: 2px solid #E8DEF8;
-    border-radius: 20px;
-    background-color: #F7F2FA;
+    margin: 12px 0;
+    padding: 12px;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
+    background-color: #f3e5f5;
     transition: all 0.2s ease;
 }
 
 .config-file-container:hover {
-    border-color: #6750A4;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-color: #512da8;
+    box-shadow: 0 1px 4px rgba(60,60,60,0.08);
 }
 
 .config-file-container input[type="file"] {
     max-width: 100%;
     width: auto;
     box-sizing: border-box;
-    padding: 12px;
-    border: 2px dashed #E8DEF8;
-    border-radius: 16px;
-    background-color: #FFFFFF;
-    color: #1C1B1F;
+    padding: 8px;
+    border: 1px dashed #ede7f6;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #1a237e;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .config-file-container input[type="file"]::-webkit-file-upload-button {
-    padding: 8px 16px;
+    padding: 4px 8px;
     margin-right: 12px;
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
-    border-radius: 12px;
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .config-file-container input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: #D0BCFF;
+    background-color: #d1c4e9;
 }
 
 .file-hint {
-    margin-top: 12px;
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: 12px;
     color: #49454F;
     line-height: 1.5;
 }
 
 .config-control-btn {
-    margin-top: 20px;
-    padding: 12px 28px;
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
-    border-radius: 24px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 500;
     transition: all 0.2s ease;
     display: inline-flex;
@@ -482,61 +488,61 @@ input:checked + .slider:before {
 }
 
 .config-control-btn:hover {
-    background-color: #D0BCFF;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    background-color: #d1c4e9;
+    transform: none;
+    box-shadow: none;
 }
 
 .theme-toggle-container {
-    margin: 24px 0;
+    margin: 12px 0;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 8px;
 }
 
 #theme-select {
     width: 100%;
-    padding: 12px 16px;
-    font-size: 1.2rem;
-    background-color: #FFFFFF;
-    color: #1C1B1F;
-    border: 2px solid #E8DEF8;
-    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #1a237e;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 16px center;
-    background-size: 16px;
+    background-size: 12px;
 }
 
 #theme-select:hover {
-    background-color: #F7F2FA;
-    border-color: #D0BCFF;
+    background-color: #f3e5f5;
+    border-color: #d1c4e9;
 }
 
 #theme-select:focus {
     outline: none;
-    border-color: #6750A4;
-    background-color: #F7F2FA;
+    border-color: #512da8;
+    background-color: #f3e5f5;
 }
 
 #theme-select option {
-    background-color: #FFFFFF;
-    color: #1C1B1F;
-    padding: 12px;
+    background-color: #fff;
+    color: #1a237e;
+    padding: 8px;
 }
 
 #theme-select option:hover,
 #theme-select option:focus {
-    background-color: #F7F2FA;
+    background-color: #f3e5f5;
 }
 
 .theme-toggle-container label {
-    font-size: 16px;
-    color: #1C1B1F;
-    margin-bottom: 8px;
+    font-size: 14px;
+    color: #1a237e;
+    margin-bottom: 4px;
 }
 
 .reminder-overlay {
@@ -545,7 +551,7 @@ input:checked + .slider:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -554,6 +560,7 @@ input:checked + .slider:before {
     transition: all 0.5s ease;
     backdrop-filter: blur(8px);
     z-index: 9999;
+    border-radius: 0;
 }
 
 .reminder-overlay.show {
@@ -564,29 +571,33 @@ input:checked + .slider:before {
 .reminder-content {
     text-align: center;
     animation: fadeIn 0.5s ease;
+    border-radius: 4px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(60,60,60,0.12);
+    padding: 16px;
 }
 
 .reminder-title {
     font-size: 5rem;
-    color: #FF3B30;
-    margin-bottom: 2rem;
+    color: #c62828;
+    margin-bottom: 1rem;
 }
 
 .reminder-subtitle {
     font-size: 3rem;
-    color: #FF9500;
+    color: #fbc02d;
 }
 
 .info-toggle-btn {
     position: absolute;
     right: 0;
     top: 0;
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
     border-radius: 50%;
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -596,60 +607,60 @@ input:checked + .slider:before {
 }
 
 .info-toggle-btn:hover {
-    background-color: #D0BCFF;
-    transform: translateY(-1px);
+    background-color: #d1c4e9;
+    transform: none;
 }
 
 .info-toggle-btn .material-icons {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .paper-count-container {
-    margin: 20px 0;
+    margin: 10px 0;
 }
 
 .paper-input-group {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 6px;
+    margin: 4px 0;
     font-size: 2.5rem;
 }
 
 .count-control {
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 2px;
 }
 
 .count-control input {
-    width: 60px;
-    padding: 5px;
+    width: 36px;
+    padding: 2px;
     font-size: 2rem;
     text-align: center;
     background-color: #FFFFFF;
     color: #1C1B1F;
-    border: 2px solid #E8DEF8;
-    border-radius: 8px;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
 }
 
 .count-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 24px;
+    height: 24px;
     border: none;
     border-radius: 50%;
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
     cursor: pointer;
     transition: all 0.2s ease;
 }
 
 .count-btn:hover {
-    background-color: #D0BCFF;
-    transform: translateY(-1px);
+    background-color: #d1c4e9;
+    transform: none;
 }
 
 .count-btn .material-icons {
@@ -676,8 +687,8 @@ input:checked + .slider:before {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.3);
-    backdrop-filter: blur(8px);
+    background: rgba(0,0,0,0.18);
+    backdrop-filter: none;
 }
 
 #reminder-modal-content.settings-panel {
@@ -685,47 +696,48 @@ input:checked + .slider:before {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 800px;
-    max-width: 95vw;
-    max-height: 80vh;
+    width: 400px;
+    max-width: 98vw;
+    max-height: 70vh;
     overflow-y: auto;
     background: #fff;
-    border-radius: 28px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-    padding: 32px 48px 32px 32px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(60,60,60,0.12);
+    padding: 20px 24px;
 }
 
 #reminder-modal-content.settings-panel h3 {
     margin-top: 0;
     margin-bottom: 24px;
-    font-size: 24px;
-    font-weight: 400;
-    color: #1C1B1F;
+    font-size: 18px;
+    font-weight: 500;
+    color: #1a237e;
 }
 
 .reminder-table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     background: #fff;
-    border-radius: 16px;
+    border-radius: 4px;
     overflow: hidden;
     table-layout: fixed;
+    box-shadow: none;
 }
 
 .reminder-table th, .reminder-table td {
-    padding: 16px 8px;
+    padding: 8px 4px;
     font-size: 1.4rem;
     text-align: center;
-    border-bottom: 1px solid #E8DEF8;
+    border-bottom: 1px solid #ede7f6;
     vertical-align: middle;
     word-break: break-all;
 }
 
 .reminder-table th {
-    background: #E8DEF8;
-    color: #1C1B1F;
+    background: #ede7f6;
+    color: #1a237e;
     font-weight: 500;
 }
 
@@ -737,7 +749,7 @@ input:checked + .slider:before {
 .reminder-table td:nth-child(1) {
     width: 50%;
     text-align: left;
-    padding-left: 20px;
+    padding-left: 8px;
 }
 .reminder-table th:nth-child(2),
 .reminder-table td:nth-child(2) {
@@ -753,12 +765,12 @@ input:checked + .slider:before {
 }
 
 .reminder-table .action-btn {
-    padding: 8px 18px;
-    border-radius: 16px;
-    background: #E8DEF8;
-    color: #1C1B1F;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #ede7f6;
+    color: #1a237e;
     border: none;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background 0.2s;
     margin: 0 auto;
@@ -766,27 +778,27 @@ input:checked + .slider:before {
 }
 
 .reminder-table .action-btn:hover {
-    background: #D0BCFF;
+    background: #d1c4e9;
 }
 
 #reminder-modal-content .button-group {
     background: #fff;
-    border-top: 1px solid #E8DEF8;
-    margin-top: 32px;
-    padding: 16px 0 0 0;
+    border-top: 1px solid #ede7f6;
+    margin-top: 16px;
+    padding: 8px 0 0 0;
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
-    border-radius: 0 0 28px 28px;
+    gap: 8px;
+    border-radius: 0 0 4px 4px;
 }
 
 .reminder-btn {
-    padding: 8px 18px;
-    border-radius: 16px;
-    background: #FFDAD6;
-    color: #5C1130;
+    padding: 4px 10px;
+    border-radius: 4px;
+    background: #ffcdd2;
+    color: #c62828;
     border: none;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     cursor: pointer;
     transition: background 0.2s;
     margin: 0 auto;
@@ -794,58 +806,58 @@ input:checked + .slider:before {
 }
 
 .reminder-btn:hover {
-    background: #FFB4AB;
+    background: #e57373;
 }
 
 .reminder-select {
     width: 100%;
-    padding: 8px 12px;
-    font-size: 1.1rem;
-    border: 2px solid #E8DEF8;
-    border-radius: 10px;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
     background: #fff;
-    color: #1C1B1F;
+    color: #1a237e;
     transition: border-color 0.2s;
     outline: none;
 }
 
 .reminder-select:focus {
-    border-color: #6750A4;
+    border-color: #512da8;
 }
 
 .reminder-time-input {
-    width: 80px;
-    padding: 8px 12px;
-    font-size: 1.1rem;
-    border: 2px solid #E8DEF8;
-    border-radius: 10px;
+    width: 48px;
+    padding: 4px 6px;
+    font-size: 0.9rem;
+    border: 1px solid #ede7f6;
+    border-radius: 4px;
     background: #fff;
-    color: #1C1B1F;
+    color: #1a237e;
     transition: border-color 0.2s;
     outline: none;
     text-align: center;
 }
 
 .reminder-time-input:focus {
-    border-color: #6750A4;
+    border-color: #512da8;
 }
 
 .reminder-btn-group,
 #reminder-modal-content .button-group {
     display: flex;
     justify-content: flex-end;
-    gap: 16px;
-    margin-top: 32px;
+    gap: 8px;
+    margin-top: 16px;
     background: #fff;
-    border-top: 1px solid #E8DEF8;
-    padding: 16px 0 0 0;
-    border-radius: 0 0 28px 28px;
+    border-top: 1px solid #ede7f6;
+    padding: 8px 0 0 0;
+    border-radius: 0 0 4px 4px;
 }
 
 #save-reminder-btn, #close-reminder-btn {
-    padding: 12px 24px;
-    border-radius: 20px;
-    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 500;
     border: none;
     cursor: pointer;
@@ -856,16 +868,17 @@ input:checked + .slider:before {
 }
 
 #save-reminder-btn {
-    background-color: #6750A4;
+    background-color: #512da8;
     color: #fff;
 }
 
 #close-reminder-btn {
-    background-color: #E8DEF8;
-    color: #1C1B1F;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
 #save-reminder-btn:hover, #close-reminder-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    background-color: #d1c4e9;
+    transform: none;
+    box-shadow: none;
 }
