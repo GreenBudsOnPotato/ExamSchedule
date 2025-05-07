@@ -885,7 +885,7 @@ input:checked + .slider:before {
     border-radius: 0 0 4px 4px;
 }
 
-#save-reminder-btn, #close-reminder-btn, #stop-audio-btn {
+#save-reminder-btn, #close-reminder-btn {
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 14px;
@@ -898,7 +898,6 @@ input:checked + .slider:before {
     gap: 8px;
     background-color: #33304a;
     color: #ede7f6;
-    box-shadow: none;
 }
 
 #save-reminder-btn {
@@ -911,40 +910,8 @@ input:checked + .slider:before {
     color: #ede7f6;
 }
 
-#stop-audio-btn {
-    background-color: #3a2523;
-    color: #ef9a9a;
-}
-
-#save-reminder-btn:hover, #close-reminder-btn:hover, #stop-audio-btn:hover {
+#save-reminder-btn:hover, #close-reminder-btn:hover {
     background-color: #5e5470;
     transform: none;
     box-shadow: none;
-}
-
-#stop-audio-btn:hover {
-    background-color: #5c1130;
-    color: #fff;
-}
-
-/* 导出按钮样式 */
-#export-config-btn {
-    margin-top: 12px;
-    padding: 8px 20px;
-    background-color: #33304a;
-    color: #b39ddb;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.2s, box-shadow 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#export-config-btn:hover {
-    background-color: #5e5470;
-    box-shadow: 0 2px 8px rgba(179,157,219,0.12);
 }

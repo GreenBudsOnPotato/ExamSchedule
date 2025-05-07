@@ -5,8 +5,8 @@
     padding: 12px 24px; /* 内边距 */
     font-size: 1rem; /* 字体大小 */
     cursor: pointer; /* 鼠标悬停时显示为手型 */
-    background-color: #e3f2fd; /* 浅蓝色 */
-    color: #1565c0; /* 按钮文字颜色 */
+    background-color: #E8DEF8; /* 按钮背景颜色 */
+    color: #000000; /* 按钮文字颜色 */
     border: none; /* 按钮边框样式 */
     border-radius: 4px; /* 按钮圆角大小 */
     box-shadow: none; /* 按钮阴影 */
@@ -15,7 +15,7 @@
 }
 
 #return-btn:hover {
-    background-color: #bbdefb; /* 悬停时的背景颜色 */
+    background-color: #ede7f6; /* 悬停时的背景颜色 */
     transform: none; /* 悬停时向上移动 1px */
     box-shadow: none; /* 悬停时的阴影效果 */
 }
@@ -47,8 +47,8 @@ body::-webkit-scrollbar {
     padding: 8px 16px;
     font-size: 1rem;
     cursor: pointer;
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
     border-radius: 4px;
     box-shadow: none;
@@ -79,7 +79,7 @@ body::-webkit-scrollbar {
 }
 
 #fullscreen-btn:hover, #settings-btn:hover, #reminder-settings-btn:hover {
-    background-color: #bbdefb;
+    background-color: #d1c4e9;
     transform: none;
     box-shadow: none;
 }
@@ -193,13 +193,13 @@ th, td {
 }
 
 th {
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     font-weight: 500;
 }
 
 tr:hover {
-    background-color: #bbdefb;
+    background-color: #f3e5f5;
 }
 
 .exam-status-tag {
@@ -210,12 +210,12 @@ tr:hover {
 }
 
 .exam-status-进行中 {
-    background-color: #b3e5fc;
-    color: #0277bd;
+    background-color: #c8e6c9;
+    color: #388e3c;
 }
 
 .exam-status-即将开始 {
-    background-color: #fffde7;
+    background-color: #fff9c4;
     color: #fbc02d;
 }
 
@@ -225,8 +225,8 @@ tr:hover {
 }
 
 .exam-status-未开始 {
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
 #settings-modal {
@@ -250,7 +250,6 @@ tr:hover {
     max-height: 70vh;
     overflow-y: auto;
     box-shadow: 0 2px 8px rgba(60,60,60,0.12);
-    border: 2px solid #90caf9;
 }
 
 #settings-modal-content::-webkit-scrollbar {
@@ -274,7 +273,7 @@ tr:hover {
 
 #settings-modal-content h3 {
     margin: 0 0 24px;
-    color: #1565c0;
+    color: #1C1B1F;
     font-size: 18px;
     font-weight: 500;
 }
@@ -295,17 +294,17 @@ tr:hover {
     margin: 4px 0 12px;
     width: 100%;
     box-sizing: border-box;
-    border: 1px solid #90caf9;
+    border: 1px solid #ede7f6;
     border-radius: 4px;
     background-color: #fff;
-    color: #1565c0;
+    color: #1a237e;
     transition: all 0.2s ease;
 }
 
 #settings-modal-content input:focus {
     outline: none;
-    border-color: #1976d2;
-    background-color: #e3f2fd;
+    border-color: #512da8;
+    background-color: #f3e5f5;
 }
 
 .button-group {
@@ -316,7 +315,7 @@ tr:hover {
     position: relative;
     background-color: #fff;
     padding: 8px 0;
-    border-top: 1px solid #90caf9;
+    border-top: 1px solid #ede7f6;
     border-radius: 0 0 4px 4px;
 }
 
@@ -347,23 +346,23 @@ tr:hover {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     box-shadow: none;
 }
 
 #save-settings-btn {
-    background-color: #1976d2;
+    background-color: #512da8;
     color: #fff;
 }
 
 #close-settings-btn {
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
 #save-settings-btn:hover, #close-settings-btn:hover {
-    background-color: #90caf9;
+    background-color: #d1c4e9;
     transform: none;
     box-shadow: none;
 }
@@ -397,7 +396,7 @@ tr:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #e3f2fd;
+    background-color: #ede7f6;
     transition: .3s;
     border-radius: 10px;
 }
@@ -415,7 +414,7 @@ tr:hover {
 }
 
 input:checked + .slider {
-    background-color: #1976d2;
+    background-color: #512da8;
 }
 
 input:checked + .slider:before {
@@ -426,14 +425,14 @@ input:checked + .slider:before {
 .config-file-container {
     margin: 12px 0;
     padding: 12px;
-    border: 1px solid #90caf9;
+    border: 1px solid #ede7f6;
     border-radius: 4px;
-    background-color: #e3f2fd;
+    background-color: #f3e5f5;
     transition: all 0.2s ease;
 }
 
 .config-file-container:hover {
-    border-color: #1976d2;
+    border-color: #512da8;
     box-shadow: 0 1px 4px rgba(60,60,60,0.08);
 }
 
@@ -442,10 +441,10 @@ input:checked + .slider:before {
     width: auto;
     box-sizing: border-box;
     padding: 8px;
-    border: 1px dashed #90caf9;
+    border: 1px dashed #ede7f6;
     border-radius: 4px;
     background-color: #fff;
-    color: #1565c0;
+    color: #1a237e;
     cursor: pointer;
     transition: all 0.2s ease;
 }
@@ -453,8 +452,8 @@ input:checked + .slider:before {
 .config-file-container input[type="file"]::-webkit-file-upload-button {
     padding: 4px 8px;
     margin-right: 12px;
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -462,21 +461,21 @@ input:checked + .slider:before {
 }
 
 .config-file-container input[type="file"]::-webkit-file-upload-button:hover {
-    background-color: #bbdefb;
+    background-color: #d1c4e9;
 }
 
 .file-hint {
     margin-top: 6px;
     font-size: 12px;
-    color: #1976d2;
+    color: #49454F;
     line-height: 1.5;
 }
 
 .config-control-btn {
     margin-top: 10px;
     padding: 8px 16px;
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -489,7 +488,7 @@ input:checked + .slider:before {
 }
 
 .config-control-btn:hover {
-    background-color: #bbdefb;
+    background-color: #d1c4e9;
     transform: none;
     box-shadow: none;
 }
@@ -506,8 +505,8 @@ input:checked + .slider:before {
     padding: 8px 12px;
     font-size: 1rem;
     background-color: #fff;
-    color: #1565c0;
-    border: 1px solid #90caf9;
+    color: #1a237e;
+    border: 1px solid #ede7f6;
     border-radius: 4px;
     cursor: pointer;
     appearance: none;
@@ -519,30 +518,30 @@ input:checked + .slider:before {
 }
 
 #theme-select:hover {
-    background-color: #e3f2fd;
-    border-color: #1976d2;
+    background-color: #f3e5f5;
+    border-color: #d1c4e9;
 }
 
 #theme-select:focus {
     outline: none;
-    border-color: #1976d2;
-    background-color: #e3f2fd;
+    border-color: #512da8;
+    background-color: #f3e5f5;
 }
 
 #theme-select option {
     background-color: #fff;
-    color: #1565c0;
+    color: #1a237e;
     padding: 8px;
 }
 
 #theme-select option:hover,
 #theme-select option:focus {
-    background-color: #e3f2fd;
+    background-color: #f3e5f5;
 }
 
 .theme-toggle-container label {
     font-size: 14px;
-    color: #1565c0;
+    color: #1a237e;
     margin-bottom: 4px;
 }
 
@@ -552,7 +551,7 @@ input:checked + .slider:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(227, 242, 253, 0.92);
+    background-color: rgba(255, 255, 255, 0.92);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -580,7 +579,7 @@ input:checked + .slider:before {
 
 .reminder-title {
     font-size: 5rem;
-    color: #1976d2;
+    color: #c62828;
     margin-bottom: 1rem;
 }
 
@@ -593,8 +592,8 @@ input:checked + .slider:before {
     position: absolute;
     right: 0;
     top: 0;
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -608,7 +607,7 @@ input:checked + .slider:before {
 }
 
 .info-toggle-btn:hover {
-    background-color: #bbdefb;
+    background-color: #d1c4e9;
     transform: none;
 }
 
@@ -737,8 +736,8 @@ input:checked + .slider:before {
 }
 
 .reminder-table th {
-    background: #e3f2fd;
-    color: #1565c0;
+    background: #ede7f6;
+    color: #1a237e;
     font-weight: 500;
 }
 
@@ -768,8 +767,8 @@ input:checked + .slider:before {
 .reminder-table .action-btn {
     padding: 4px 10px;
     border-radius: 4px;
-    background: #e3f2fd;
-    color: #1565c0;
+    background: #ede7f6;
+    color: #1a237e;
     border: none;
     font-size: 0.9rem;
     cursor: pointer;
@@ -779,12 +778,12 @@ input:checked + .slider:before {
 }
 
 .reminder-table .action-btn:hover {
-    background: #bbdefb;
+    background: #d1c4e9;
 }
 
 #reminder-modal-content .button-group {
     background: #fff;
-    border-top: 1px solid #90caf9;
+    border-top: 1px solid #ede7f6;
     margin-top: 16px;
     padding: 8px 0 0 0;
     display: flex;
@@ -796,8 +795,8 @@ input:checked + .slider:before {
 .reminder-btn {
     padding: 4px 10px;
     border-radius: 4px;
-    background: #bbdefb;
-    color: #1565c0;
+    background: #ffcdd2;
+    color: #c62828;
     border: none;
     font-size: 0.9rem;
     cursor: pointer;
@@ -807,40 +806,40 @@ input:checked + .slider:before {
 }
 
 .reminder-btn:hover {
-    background: #90caf9;
+    background: #e57373;
 }
 
 .reminder-select {
     width: 100%;
     padding: 4px 8px;
     font-size: 0.9rem;
-    border: 1px solid #90caf9;
+    border: 1px solid #ede7f6;
     border-radius: 4px;
     background: #fff;
-    color: #1565c0;
+    color: #1a237e;
     transition: border-color 0.2s;
     outline: none;
 }
 
 .reminder-select:focus {
-    border-color: #1976d2;
+    border-color: #512da8;
 }
 
 .reminder-time-input {
     width: 48px;
     padding: 4px 6px;
     font-size: 0.9rem;
-    border: 1px solid #90caf9;
+    border: 1px solid #ede7f6;
     border-radius: 4px;
     background: #fff;
-    color: #1565c0;
+    color: #1a237e;
     transition: border-color 0.2s;
     outline: none;
     text-align: center;
 }
 
 .reminder-time-input:focus {
-    border-color: #1976d2;
+    border-color: #512da8;
 }
 
 .reminder-btn-group,
@@ -850,12 +849,12 @@ input:checked + .slider:before {
     gap: 8px;
     margin-top: 16px;
     background: #fff;
-    border-top: 1px solid #90caf9;
+    border-top: 1px solid #ede7f6;
     padding: 8px 0 0 0;
     border-radius: 0 0 4px 4px;
 }
 
-#save-reminder-btn, #close-reminder-btn, #stop-audio-btn {
+#save-reminder-btn, #close-reminder-btn {
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 14px;
@@ -866,55 +865,20 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: #e3f2fd;
-    color: #1565c0;
-    box-shadow: none;
 }
 
 #save-reminder-btn {
-    background-color: #1976d2;
+    background-color: #512da8;
     color: #fff;
 }
 
 #close-reminder-btn {
-    background-color: #e3f2fd;
-    color: #1565c0;
+    background-color: #ede7f6;
+    color: #1a237e;
 }
 
-#stop-audio-btn {
-    background-color: #ffcdd2;
-    color: #c62828;
-}
-
-#save-reminder-btn:hover, #close-reminder-btn:hover, #stop-audio-btn:hover {
-    background-color: #90caf9;
+#save-reminder-btn:hover, #close-reminder-btn:hover {
+    background-color: #d1c4e9;
     transform: none;
     box-shadow: none;
-}
-
-#stop-audio-btn:hover {
-    background-color: #ef9a9a;
-    color: #fff;
-}
-
-/* 导出按钮样式 */
-#export-config-btn {
-    margin-top: 12px;
-    padding: 8px 20px;
-    background-color: #e3f2fd;
-    color: #1565c0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 500;
-    transition: background 0.2s, box-shadow 0.2s;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
-
-#export-config-btn:hover {
-    background-color: #bbdefb;
-    box-shadow: 0 2px 8px rgba(25,118,210,0.08);
 }

@@ -79,7 +79,7 @@ body::-webkit-scrollbar {
 }
 
 #fullscreen-btn:hover, #settings-btn:hover, #reminder-settings-btn:hover {
-    background-color: #90CAF9;
+    background-color: #D0BCFF;
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
@@ -699,7 +699,7 @@ input:checked + .slider:before {
     top: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(33, 150, 243, 0.15);
+    background: rgba(0,0,0,0.3);
     backdrop-filter: blur(8px);
 }
 
@@ -714,7 +714,7 @@ input:checked + .slider:before {
     overflow-y: auto;
     background: #fff;
     border-radius: 28px;
-    box-shadow: 0 8px 24px rgba(33,150,243,0.18);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
     padding: 32px 48px 32px 32px;
 }
 
@@ -723,7 +723,7 @@ input:checked + .slider:before {
     margin-bottom: 24px;
     font-size: 24px;
     font-weight: 400;
-    color: #0D47A1;
+    color: #1C1B1F;
 }
 
 .reminder-table {
@@ -741,14 +741,14 @@ input:checked + .slider:before {
     padding: 16px 8px;
     font-size: 1.4rem;
     text-align: center;
-    border-bottom: 1px solid #BBDEFB;
+    border-bottom: 1px solid #E8DEF8;
     vertical-align: middle;
     word-break: break-all;
 }
 
 .reminder-table th {
-    background: #BBDEFB;
-    color: #0D47A1;
+    background: #E8DEF8;
+    color: #1C1B1F;
     font-weight: 500;
 }
 
@@ -778,8 +778,8 @@ input:checked + .slider:before {
 .reminder-table .action-btn {
     padding: 8px 18px;
     border-radius: 16px;
-    background: #E3F2FD;
-    color: #0D47A1;
+    background: #E8DEF8;
+    color: #1C1B1F;
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
@@ -789,12 +789,12 @@ input:checked + .slider:before {
 }
 
 .reminder-table .action-btn:hover {
-    background: #90CAF9;
+    background: #D0BCFF;
 }
 
 #reminder-modal-content .button-group {
     background: #fff;
-    border-top: 1px solid #BBDEFB;
+    border-top: 1px solid #E8DEF8;
     margin-top: 32px;
     padding: 16px 0 0 0;
     display: flex;
@@ -806,8 +806,8 @@ input:checked + .slider:before {
 .reminder-btn {
     padding: 8px 18px;
     border-radius: 16px;
-    background: #B3E5FC;
-    color: #01579B;
+    background: #FFDAD6;
+    color: #5C1130;
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
@@ -817,40 +817,40 @@ input:checked + .slider:before {
 }
 
 .reminder-btn:hover {
-    background: #81D4FA;
+    background: #FFB4AB;
 }
 
 .reminder-select {
     width: 100%;
     padding: 8px 12px;
     font-size: 1.1rem;
-    border: 2px solid #BBDEFB;
+    border: 2px solid #E8DEF8;
     border-radius: 10px;
     background: #fff;
-    color: #0D47A1;
+    color: #1C1B1F;
     transition: border-color 0.2s;
     outline: none;
 }
 
 .reminder-select:focus {
-    border-color: #1976D2;
+    border-color: #6750A4;
 }
 
 .reminder-time-input {
     width: 80px;
     padding: 8px 12px;
     font-size: 1.1rem;
-    border: 2px solid #BBDEFB;
+    border: 2px solid #E8DEF8;
     border-radius: 10px;
     background: #fff;
-    color: #0D47A1;
+    color: #1C1B1F;
     transition: border-color 0.2s;
     outline: none;
     text-align: center;
 }
 
 .reminder-time-input:focus {
-    border-color: #1976D2;
+    border-color: #6750A4;
 }
 
 .reminder-btn-group,
@@ -860,12 +860,12 @@ input:checked + .slider:before {
     gap: 16px;
     margin-top: 32px;
     background: #fff;
-    border-top: 1px solid #BBDEFB;
+    border-top: 1px solid #E8DEF8;
     padding: 16px 0 0 0;
     border-radius: 0 0 28px 28px;
 }
 
-#save-reminder-btn, #close-reminder-btn, #stop-audio-btn {
+#save-reminder-btn, #close-reminder-btn {
     padding: 12px 24px;
     border-radius: 20px;
     font-size: 16px;
@@ -879,26 +879,16 @@ input:checked + .slider:before {
 }
 
 #save-reminder-btn {
-    background-color: #1976D2;
+    background-color: #6750A4;
     color: #fff;
 }
 
 #close-reminder-btn {
-    background-color: #E3F2FD;
-    color: #0D47A1;
+    background-color: #E8DEF8;
+    color: #1C1B1F;
 }
 
-#stop-audio-btn {
-    background-color: #B3E5FC;
-    color: #01579B;
-}
-
-#save-reminder-btn:hover, #close-reminder-btn:hover, #stop-audio-btn:hover {
+#save-reminder-btn:hover, #close-reminder-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-}
-
-#stop-audio-btn:hover {
-    background-color: #81D4FA;
-    color: #01579B;
 }

@@ -43,10 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
             try {
                 const data = JSON.parse(localConfig);
                 window.examConfigData = data; // 暴露全局变量供提醒队列使用
-                // 同步提醒设置
-                if (data.examReminders && Array.isArray(data.examReminders)) {
-                    setCookie("examReminders", encodeURIComponent(JSON.stringify(data.examReminders)), 365);
-                }
                 displayExamInfo(data);
                 updateCurrentTime();
                 updateExamInfo(data);
@@ -64,10 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .then(response => response.json())
             .then(data => {
                 window.examConfigData = data; // 暴露全局变量供提醒队列使用
-                // 同步提醒设置
-                if (data.examReminders && Array.isArray(data.examReminders)) {
-                    setCookie("examReminders", encodeURIComponent(JSON.stringify(data.examReminders)), 365);
-                }
                 displayExamInfo(data);
                 updateCurrentTime();
                 updateExamInfo(data);
