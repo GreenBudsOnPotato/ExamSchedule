@@ -101,6 +101,39 @@ function loadRemindersToQueue(reminders) {
     });
 }
 
+function exportConfig() {
+    try {
+        // 获取考试配置
+        let config = null;
+        if (window.examConfigData) {
+            config = JSON.parse(JSON.stringify(window.examConfigData));
+        } else {
+            errorSystem.show('未找到考试配置信息');
+            return;
+        }
+        // 获取提醒设置
+        const reminderCookie = getCookie("examReminders");
+        let reminders = [];
+        if (reminderCookie) {
+            reminders = JSON.parse(decodeURIComponent(reminderCookie));
+        }
+        config.examReminders = reminders;
+        // 导出为JSON文件
+        const blob = new Blob([JSON.stringify(config, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "exam_config_with_reminders.json";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        errorSystem.show('配置已导出');
+    } catch (e) {
+        errorSystem.show('导出配置失败: ' + e.message);
+    }
+}
+
 // 页面加载时自动填充提醒表格
 document.addEventListener("DOMContentLoaded", () => {
     // 加载提醒设置
@@ -151,5 +184,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     loadRemindersToQueue(reminders);
                 });
         }
+    }
+    // 导出按钮事件
+    const exportBtn = document.getElementById('export-config-btn');
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportConfig);
     }
 });

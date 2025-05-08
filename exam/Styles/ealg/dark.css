@@ -909,10 +909,10 @@ input:checked + .slider:before {
 
 /* 提醒时间输入框独立样式 */
 .reminder-table .reminder-time-input {
-    width: 30px;
+    width: 80px;
     height: 36px;
     padding: 0 12px;
-    font-size: 14px;
+    font-size: 0.8rem; /* 修复字体过大 */
     background-color: #332D41;
     color: #E6E1E5;
     border: 2px solid #4A4458;
@@ -1027,4 +1027,53 @@ input:checked + .slider:before {
 
 .reminder-table td:nth-child(4) {
     width: 10%;
+}
+
+.reminder-table .action-btn,
+.action-btn {
+    height: 36px;
+    min-width: 80px;
+    padding: 0 16px;
+    font-size: 1rem;
+    background-color: #404040;
+    color: #E6E1E5;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reminder-table .action-btn:hover,
+.action-btn:hover {
+    background-color: #4A4A4A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+/* 导出按钮样式 */
+#export-config-btn {
+    margin-top: 12px;
+    padding: 12px 28px;
+    background-color: #404040;
+    color: #E6E1E5;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#export-config-btn:hover {
+    background-color: #4A4A4A;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }

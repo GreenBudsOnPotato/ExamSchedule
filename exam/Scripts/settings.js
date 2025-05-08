@@ -140,7 +140,12 @@ document.addEventListener("DOMContentLoaded", () => {
                             throw new Error("无效的日期格式");
                         }
                     });
-                    
+
+                    // 导入提醒设置
+                    if (config.examReminders && Array.isArray(config.examReminders)) {
+                        setCookie("examReminders", encodeURIComponent(JSON.stringify(config.examReminders)), 365);
+                    }
+
                     // 保存配置到本地存储
                     localStorage.setItem('localExamConfig', JSON.stringify(config));
                     errorSystem.show('配置文件已加载，将在下次启动时生效');
