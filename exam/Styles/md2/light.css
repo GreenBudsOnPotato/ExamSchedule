@@ -882,3 +882,25 @@ input:checked + .slider:before {
     transform: none;
     box-shadow: none;
 }
+
+/* 导出按钮样式 */
+#export-config-btn {
+    margin-top: 12px;
+    padding: 8px 20px;
+    background-color: #ede7f6;
+    color: #1a237e;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#export-config-btn:hover {
+    background-color: #d1c4e9;
+    box-shadow: 0 2px 8px rgba(81,45,168,0.08);
+}

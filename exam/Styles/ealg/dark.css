@@ -912,7 +912,7 @@ input:checked + .slider:before {
     width: 80px;
     height: 36px;
     padding: 0 12px;
-    font-size: 0.8rem; /* 修复字体过大 */
+    font-size: 1.1rem; /* 修复字体过大 */
     background-color: #332D41;
     color: #E6E1E5;
     border: 2px solid #4A4458;

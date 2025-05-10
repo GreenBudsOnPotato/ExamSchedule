@@ -1106,3 +1106,26 @@ theme-toggle-container {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(22,163,209,0.18);
 }
+
+/* 导出按钮样式 */
+#export-config-btn {
+    margin-top: 12px;
+    padding: 10px 24px;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+#export-config-btn:hover {
+    background-color: #ccc;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}

@@ -1110,3 +1110,26 @@ input:checked + .slider:before {
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(124,195,251,0.18);
 }
+
+/* 导出按钮样式 */
+#export-config-btn {
+    margin-top: 12px;
+    padding: 10px 24px;
+    background-color: #222;
+    color: #7cc3fb;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 500;
+    transition: background 0.2s, box-shadow 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(124,195,251,0.08);
+}
+
+#export-config-btn:hover {
+    background-color: #333;
+    box-shadow: 0 4px 12px rgba(124,195,251,0.15);
+}

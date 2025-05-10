@@ -466,6 +466,29 @@ input:checked + .slider:before {
     box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
+/* 导出按钮样式 */
+#export-config-btn {
+    margin-top: 12px;
+    padding: 12px 28px;
+    background-color: #4A4458;
+    color: #D0BCFF;
+    border: none;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#export-config-btn:hover {
+    background-color: #635B70;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(208,188,255,0.15);
+}
+
 .theme-toggle-container {
     margin: 24px 0;
     display: flex;
