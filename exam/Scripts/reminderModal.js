@@ -9,10 +9,19 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     closeReminderBtn.addEventListener("click", function() {
+        // 只在校验通过时关闭弹窗
+        if (window.__reminderCloseBlocked) {
+            // 校验未通过，阻止关闭
+            return;
+        }
         reminderModal.style.display = "none";
     });
 
     saveReminderBtn.addEventListener("click", function() {
+        if (typeof validateReminders === "function" && !validateReminders()) {
+            // 校验未通过，阻止关闭
+            return;
+        }
         saveConfig();
         reminderModal.style.display = "none";
     });

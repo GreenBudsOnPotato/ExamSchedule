@@ -3,25 +3,32 @@
 function addReminder() {
     var table = document.getElementById('reminderTable');
     var row = table.insertRow(table.rows.length - 1);
+    // 默认类型为 beforeStart，文本框可编辑
     row.innerHTML = `
         <td>
             <select class="reminder-select">
-                <option value="beforeStart">当距离考试开始时间还有</option>
+                <option value="beforeStart" selected>当距离考试开始时间还有</option>
                 <option value="beforeEnd">当距离考试结束时间还有</option>
                 <option value="afterEnd">当考试结束后</option>
                 <option value="start">当考试开始时</option>
                 <option value="end">当考试结束时</option>
             </select>
         </td>
-        <td><input type="number" class="reminder-time-input" placeholder="分钟" disabled></td>
+        <td><input type="number" class="reminder-time-input" placeholder="分钟"></td>
         <td>
             <select name="audioSelect" class="reminder-select"></select>
         </td>
         <td><button class="reminder-btn" onclick="removeReminder(this)">移除提醒</button></td>
     `;
     row.cells[0].querySelector('select').addEventListener('change', function() {
-        row.cells[1].querySelector('input').disabled = this.value === 'start' || this.value === 'end';
-        row.cells[1].querySelector('input').placeholder = this.value === 'start' || this.value === 'end' ? '-' : '分钟';
+        var input = row.cells[1].querySelector('input');
+        if (this.value === 'start' || this.value === 'end') {
+            input.disabled = true;
+            input.placeholder = '-';
+        } else {
+            input.disabled = false;
+            input.placeholder = '分钟';
+        }
     });
     audioController.populateAudioSelect();
 }
@@ -33,6 +40,9 @@ function removeReminder(button) {
 
 function saveConfig() {
     try {
+        if (!validateReminders()) {
+            return;
+        }
         var table = document.getElementById('reminderTable');
         var reminders = [];
         for (var i = 1; i < table.rows.length - 1; i++) {
@@ -40,13 +50,6 @@ function saveConfig() {
             var condition = row.cells[0].querySelector('select').value;
             var timeInput = row.cells[1].querySelector('input');
             var audioSelect = row.cells[2].querySelector('select');
-            // 校验：只有距离开始/结束/考试后类型时必须填写时间
-            if (condition === 'beforeStart' || condition === 'beforeEnd' || condition === 'afterEnd') {
-                if (!timeInput.value || isNaN(timeInput.value) || Number(timeInput.value) <= 0) {
-                    errorSystem.show('保存失败，请为“距离开始/结束/考试后”类型填写有效的分钟数');
-                    return;
-                }
-            }
             if (timeInput && audioSelect) {
                 reminders.push({
                     condition: condition,
@@ -141,6 +144,23 @@ function exportConfig() {
     }
 }
 
+// 校验函数，供关闭弹窗和保存时调用
+function validateReminders() {
+    var table = document.getElementById('reminderTable');
+    for (var i = 1; i < table.rows.length - 1; i++) {
+        var row = table.rows[i];
+        var condition = row.cells[0].querySelector('select').value;
+        var timeInput = row.cells[1].querySelector('input');
+        if (condition === 'beforeStart' || condition === 'beforeEnd' || condition === 'afterEnd') {
+            if (!timeInput.value || isNaN(timeInput.value) || Number(timeInput.value) <= 0) {
+                errorSystem.show('请为“距离开始/结束/考试后”类型填写有效的分钟数');
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 // 页面加载时自动填充提醒表格
 document.addEventListener("DOMContentLoaded", () => {
     // 加载提醒设置
@@ -225,19 +245,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeBtn = document.getElementById('close-reminder-btn');
     if (closeBtn) {
         closeBtn.addEventListener('click', function(e) {
-            var table = document.getElementById('reminderTable');
-            for (var i = 1; i < table.rows.length - 1; i++) {
-                var row = table.rows[i];
-                var condition = row.cells[0].querySelector('select').value;
-                var timeInput = row.cells[1].querySelector('input');
-                if (condition === 'beforeStart' || condition === 'beforeEnd' || condition === 'afterEnd') {
-                    if (!timeInput.value || isNaN(timeInput.value) || Number(timeInput.value) <= 0) {
-                        errorSystem.show('请为“距离开始/结束/考试后”类型填写有效的分钟数');
-                        e.preventDefault();
-                        return;
-                    }
-                }
+            if (!validateReminders()) {
+                e.preventDefault();
+                // 阻止关闭弹窗，需配合reminderModal.js
+                window.__reminderCloseBlocked = true;
+                return;
             }
+            window.__reminderCloseBlocked = false;
             // ...existing code for关闭弹窗...
         });
     }
