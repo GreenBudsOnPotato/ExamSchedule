@@ -9,22 +9,21 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
-            background: #2C2B30;
+            background: #e3f2fd;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             font-family: 'Google Sans', 'Roboto', sans-serif;
-            color: #E6E1E5;
+            color: #1565c0;
             backdrop-filter: blur(10px);
         }
 
         h1 {
-            display: none; /* 隐藏选择版本标题 */
+            display: none;
         }
 
-        /* 只针对主导航按钮的样式 */
         ul {
             list-style: none;
             padding: 0;
@@ -37,15 +36,14 @@
             max-width: 800px;
         }
 
-        /* 主导航按钮样式 */
         ul a {
-            color: #E6E1E5;
+            color: #1565c0;
             text-decoration: none;
             font-size: 20px;
             font-weight: 500;
             padding: 32px;
             border-radius: 24px;
-            background-color: #49454F;
+            background-color: #bbdefb;
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
@@ -53,18 +51,21 @@
             gap: 16px;
             min-width: 200px;
             text-align: center;
-            min-height: 140px; /* 增加高度以适应副标题 */
+            min-height: 140px;
             flex: 1;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
         }
 
         ul a:hover {
-            background-color: #605D64;
+            background-color: #90caf9;
             transform: translateY(-4px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 16px rgba(25, 118, 210, 0.18);
+            color: #0d47a1;
         }
 
         ul .material-icons {
             font-size: 32px;
+            color: #1976d2;
         }
 
         @keyframes fadeInUp {
@@ -84,7 +85,7 @@
             width: 100%;
             text-align: center;
             font-size: 14px;
-            color: #CAC4D0;
+            color: #1976d2;
             animation: fadeInUp 1s ease-in-out;
         }
 
@@ -93,7 +94,7 @@
         }
 
         .github-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(25, 118, 210, 0.08);
             transform: none;
             box-shadow: none;
         }
@@ -101,7 +102,7 @@
         .github-link img {
             width: 24px;
             height: 24px;
-            filter: invert(1);
+            filter: invert(0.2) sepia(1) saturate(5) hue-rotate(180deg);
         }
 
         .project-title {
@@ -111,7 +112,7 @@
             transform: translateX(-50%);
             font-size: 24px;
             font-weight: 500;
-            color: #E6E1E5;
+            color: #1565c0;
             animation: fadeInUp 1s ease-in-out;
             display: flex;
             align-items: center;
@@ -143,27 +144,26 @@
             border-radius: 100px;
             font-size: 14px;
             text-decoration: none;
-            color: rgba(255, 255, 255, 1);
-            display: flex;              /* 新增：使用flex布局 */
-            align-items: center;        /* 新增：垂直居中对齐 */
-            gap: 6px;                   /* 新增：图标与文字间距 */
+            color: #1565c0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s, color 0.2s;
         }
 
         .about-link:hover {
-            background-color: transparent;
-            transform: none;
-            box-shadow: none;
-            color: rgba(255, 255, 255, 0.7);
+            background-color: #bbdefb;
+            color: #0d47a1;
         }
 
         .about-link .material-icons {
             font-size: 18px;
+            color: #1976d2;
         }
 
-        /* 添加新样式 */
         .subtitle {
             font-size: 14px;
-            color: #CAC4D0;
+            color: #1976d2;
             margin-top: 4px;
             width: 100%;
             text-align: center;
@@ -182,7 +182,6 @@
         </a></li>
     </ul>
 
-    <!-- 添加关于链接和GitHub图标 -->
     <div class="top-right-links">
         <a href="./about/" class="about-link">
             <span class="material-icons">info</span>
@@ -193,21 +192,17 @@
         </a>
     </div>
 
-    <!-- 新增版权信息 -->
     <div class="copyright">&copy; 2024-2025 ExamAware开发团队 版权所有</div>
     
     <script>
-        // 愚人节彩蛋
         function checkAprilFools() {
             const today = new Date();
-            if(today.getMonth() === 3 && today.getDate() === 1) {  // 4月1日
-                if(Math.random() <= 0.75) {  // 75%的概率
+            if(today.getMonth() === 3 && today.getDate() === 1) {
+                if(Math.random() <= 0.75) {
                     window.location.href = 'https://www.bilibili.com/video/BV1GJ411x7h7/';
                 }
             }
         }
-        
-        // 页面加载时执行检查
         window.onload = checkAprilFools;
     </script>
 </body>

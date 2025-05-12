@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // 更新显示内容
-    function updateDisplay(isExamTime) {
+    function updateDisplay(isExamTimeOrSoon) {
         if (autoToggle) {
-            paperInfoElem.style.display = isExamTime ? "block" : "none";
+            paperInfoElem.style.display = isExamTimeOrSoon ? "block" : "none";
         }
     }
 
@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         statusElem.style.color = "#5ba838";
                     }
                 }
+                updateDisplay(true); // 进行中时显示
             } else {
                 updateDisplay(false);
                 if (lastExam && now < new Date(lastExam.end).getTime() + 60000) {
@@ -206,6 +207,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         statusElem.textContent = "状态: 已结束";
                         statusElem.style.color = "red";
                     }
+                    updateDisplay(false);
                 } else if (nextExam) {
                     const timeUntilStart = ((new Date(nextExam.start).getTime() - now.getTime()) / 1000) + 1;
                     const remainingHours = Math.floor(timeUntilStart / 3600);
@@ -225,12 +227,14 @@ document.addEventListener("DOMContentLoaded", () => {
                         remainingTimeElem.style.fontWeight = "bold";
                         statusElem.textContent = "状态: 即将开始";
                         statusElem.style.color = "#DBA014";
+                        updateDisplay(true); // 即将开始时也显示
                     } else {
                         currentSubjectElem.textContent = `下一场科目: ${nextExam.name}`;
                         remainingTimeElem.textContent = "";
                         statusElem.textContent = "状态: 未开始";
                         remainingTimeElem.style.fontWeight = "normal";
                         statusElem.style.color = "#EAEE5B";
+                        updateDisplay(false);
                     }
 
                     examTimingElem.textContent = `起止时间: ${formatTimeWithoutSeconds(new Date(nextExam.start).toLocaleTimeString('zh-CN', { hour12: false }))} - ${formatTimeWithoutSeconds(new Date(nextExam.end).toLocaleTimeString('zh-CN', { hour12: false }))}`;
@@ -246,6 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         statusElem.textContent = " ";
                         statusElem.style.color = "#000000";
                     }
+                    updateDisplay(false);
                 }
             }
 
