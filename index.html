@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <link rel="shortcut icon" href="./favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>选择页面</title>
-    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
     <style>
         body {
             background: #e3f2fd;
@@ -73,6 +76,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             100% {
                 opacity: 1;
                 transform: translateY(0);
@@ -170,35 +174,36 @@
         }
     </style>
 </head>
+
 <body>
     <div class="project-title">
         <img src="./icon.png" alt="ExamSchedule Logo" class="project-logo">
         ExamSchedule
     </div>
     <ul>
-        <li><a href="./time/"><span class="material-icons">schedule</span>电子钟表</a></li>
-        <li><a href="./exam/"><span class="material-icons">dashboard</span>考试管理
-            <div class="subtitle">看板 & 广播</div>
-        </a></li>
+        <li><a href="./time/"><span class="material-symbols-outlined">schedule</span>电子钟表</a></li>
+        <li><a href="./exam/"><span class="material-symbols-outlined">dashboard</span>考试管理
+                <div class="subtitle">看板 & 广播</div>
+            </a></li>
     </ul>
 
     <div class="top-right-links">
         <a href="./about/" class="about-link">
-            <span class="material-icons">info</span>
+            <span class="material-symbols-outlined">info</span>
             关于
         </a>
         <a href="https://github.com/ExamAware/ExamSchedule" target="_blank" class="github-link">
-            <img src="./github-icon.png" alt="GitHub" title="在GitHub上查看源代码">
+            <span class="material-symbols-outlined" title="在GitHub上查看源代码">github</span>
         </a>
     </div>
 
     <div class="copyright">&copy; 2024-2025 ExamAware开发团队 版权所有</div>
-    
+
     <script>
         function checkAprilFools() {
             const today = new Date();
-            if(today.getMonth() === 3 && today.getDate() === 1) {
-                if(Math.random() <= 0.75) {
+            if (today.getMonth() === 3 && today.getDate() === 1) {
+                if (Math.random() <= 0.75) {
                     window.location.href = 'https://www.bilibili.com/video/BV1GJ411x7h7/';
                 }
             }
@@ -206,4 +211,5 @@
         window.onload = checkAprilFools;
     </script>
 </body>
+
 </html>
