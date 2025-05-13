@@ -40,6 +40,17 @@ function removeReminder(button) {
 
 function saveConfig() {
     try {
+        // 新增：保存启用提醒总开关
+        const reminderEnable = document.getElementById('reminder-enable-toggle').checked;
+        setCookie("reminderEnable", reminderEnable, 365);
+
+        if (!reminderEnable) {
+            // 关闭提醒时清空提醒队列
+            setCookie("examReminders", encodeURIComponent("[]"), 365);
+            errorSystem.show('提醒功能已禁用');
+            return;
+        }
+
         if (!validateReminders()) {
             return;
         }
@@ -58,11 +69,7 @@ function saveConfig() {
                 });
             }
         }
-        if (reminders.length === 0) {
-            errorSystem.show('请添加至少一个提醒策略');
-            return;
-        }
-        // 保存到 Cookie 并更新提醒队列
+        // 允许为空时保存
         setCookie("examReminders", encodeURIComponent(JSON.stringify(reminders)), 365);
         loadRemindersToQueue(reminders);
         errorSystem.show('提醒设置已保存');
@@ -163,6 +170,23 @@ function validateReminders() {
 
 // 页面加载时自动填充提醒表格
 document.addEventListener("DOMContentLoaded", () => {
+    // 新增：同步启用提醒总开关
+    const reminderEnableToggle = document.getElementById('reminder-enable-toggle');
+    const reminderEnableCookie = getCookie("reminderEnable");
+    reminderEnableToggle.checked = reminderEnableCookie === null ? true : (reminderEnableCookie === "true");
+
+    // 切换开关时禁用/启用表格和导出按钮
+    function updateReminderTableState() {
+        const disabled = !reminderEnableToggle.checked;
+        document.getElementById('reminderTable').querySelectorAll('input,select,button').forEach(el => {
+            if (el.id === 'reminder-enable-toggle' || el.id === 'export-config-btn') return;
+            el.disabled = disabled;
+        });
+        document.getElementById('export-config-btn').disabled = disabled;
+    }
+    reminderEnableToggle.addEventListener('change', updateReminderTableState);
+    setTimeout(updateReminderTableState, 0);
+
     // 加载提醒设置
     const reminderCookie = getCookie("examReminders");
     if (reminderCookie) {
