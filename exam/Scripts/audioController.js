@@ -1,4 +1,3 @@
-// ...复制 notification/scripts/audioController.js 的全部内容...
 var audioController = (function() {
     var audioPool = [];
     var maxPoolSize = 3;
@@ -101,7 +100,21 @@ var audioController = (function() {
             Object.keys(soundFiles).forEach(function(type) {
                 var option = document.createElement('option');
                 option.value = type;
+                // 检查音频文件是否可用
+                var audio = new Audio(soundFiles[type]);
+                var unavailable = false;
+                audio.addEventListener('error', function() {
+                    unavailable = true;
+                    option.textContent = type + '（不可用）';
+                });
+                // 立即尝试加载
+                audio.load();
+                // 默认文本
                 option.textContent = type;
+                // 由于audio加载是异步的，下面同步检测下src是否存在
+                if (!soundFiles[type]) {
+                    option.textContent = type + '（不可用）';
+                }
                 select.appendChild(option);
             });
             // 恢复之前选中的值（如果该值仍然有效）
