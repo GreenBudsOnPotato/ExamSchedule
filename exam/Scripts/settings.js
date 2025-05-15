@@ -177,4 +177,37 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (e) {
         errorSystem.show('初始化缩放失败: ' + e.message);
     }
+
+    // 新增：点击弹窗外区域自动保存并关闭
+    window.addEventListener("click", function(event) {
+        if (settingsModal.style.display === "block" && event.target === settingsModal) {
+            // 自动保存设置
+            try {
+                offsetTime = parseInt(offsetTimeInput.value);
+                room = roomInput.value;
+                zoomLevel = parseFloat(zoomInput.value);
+                theme = themeToggle.checked ? "light" : "dark";
+                currentTheme = themeSelect.value;
+                isAutoToggle = autoToggle.checked;
+                setCookie("offsetTime", offsetTime, 365);
+                setCookie("room", room, 365);
+                setCookie("zoomLevel", zoomLevel, 365);
+                setCookie("theme", theme, 365);
+                setCookie("currentTheme", currentTheme, 365);
+                setCookie("autoToggle", isAutoToggle, 365);
+                roomElem.textContent = room;
+                document.body.style.zoom = zoomLevel;
+                updateThemeLink();
+                settingsModal.classList.add("fade-out");
+                setTimeout(() => {
+                    settingsModal.style.display = "none";
+                    settingsModal.classList.remove("fade-out");
+                }, 300);
+                // 立即生效时间偏移
+                location.reload();
+            } catch (e) {
+                errorSystem.show('保存设置失败: ' + e.message);
+            }
+        }
+    });
 });
