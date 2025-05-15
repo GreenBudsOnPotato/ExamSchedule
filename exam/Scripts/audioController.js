@@ -14,10 +14,9 @@ var audioController = (function() {
                         createAudio(type);
                     }
                 });
-                if (!audioSelectPopulated) {
-                    populateAudioSelect();
-                    audioSelectPopulated = true;
-                }
+                // 总是填充音频选择框
+                populateAudioSelect();
+                audioSelectPopulated = true;
                 removeInvalidAudioOptions();
             })
             .catch(e => errorSystem.show('音频文件加载失败: ' + e.message, 'error'));
@@ -68,6 +67,15 @@ var audioController = (function() {
         } catch(e) {
             errorSystem.show('音频系统错误: ' + e.message, 'error');
         }
+    }
+
+    function stop() {
+        audioPool.forEach(audio => {
+            try {
+                audio.pause();
+                audio.currentTime = 0;
+            } catch (e) {}
+        });
     }
 
     function getAudioSrc(type) {
@@ -138,6 +146,7 @@ var audioController = (function() {
     return {
         init: init,
         play: play,
+        stop: stop,
         getAudioSrc: getAudioSrc,
         populateAudioSelect: populateAudioSelect,
         removeInvalidAudioOptions: removeInvalidAudioOptions,

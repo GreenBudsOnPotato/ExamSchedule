@@ -34,11 +34,12 @@ function addReminder() {
             inputCell.innerHTML = `<input type="number" class="reminder-time-input" placeholder="分钟">`;
         }
     });
-    // 音频选项填充（含不可用标记）
+    // 音频选项填充（含不可用标记），每次都刷新
     fetch('audio_files.json')
         .then(response => response.json())
         .then(audioFiles => {
             const select = row.cells[2].querySelector('select');
+            select.innerHTML = ''; // 确保每次都清空
             Object.keys(audioFiles).forEach(type => {
                 var option = document.createElement('option');
                 option.value = type;
@@ -262,9 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             reminder.audio = defaultAudio;
                         }
                         var row = table.insertRow(table.rows.length - 1);
+                        // 音频选项每次都刷新
                         let audioOptions = validAudioTypes
                             .map(audio => {
-                                // 检查可用性
                                 let text = audio;
                                 var audioObj = new Audio(audioFiles[audio]);
                                 audioObj.addEventListener('error', function() {
@@ -358,6 +359,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             window.__reminderCloseBlocked = false;
             // ...existing code for关闭弹窗...
+        });
+    }
+
+    // 添加停止音频按钮事件
+    const stopAudioBtn = document.getElementById('stop-audio-btn');
+    if (stopAudioBtn) {
+        stopAudioBtn.addEventListener('click', function() {
+            if (window.audioController && typeof window.audioController.stop === 'function') {
+                window.audioController.stop();
+            }
         });
     }
 });

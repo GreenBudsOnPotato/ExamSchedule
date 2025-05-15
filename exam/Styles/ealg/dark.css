@@ -755,7 +755,7 @@ input:checked + .slider:before {
     border-top: 1px solid #555555;
 }
 
-#save-reminder-btn, #close-reminder-btn {
+#save-reminder-btn, #close-reminder-btn, #stop-audio-btn {
     padding: 12px 24px;
     border-radius: 20px;
     font-size: 16px;
@@ -770,20 +770,30 @@ input:checked + .slider:before {
     color: #E6E1E5;
 }
 
-#save-reminder-btn::before {
-    content: "✓";
-    font-size: 18px;
+#save-reminder-btn {
+    background-color: #404040;
+    color: #E6E1E5;
 }
 
-#close-reminder-btn::before {
-    content: "✕";
-    font-size: 18px;
+#close-reminder-btn {
+    background-color: #404040;
+    color: #E6E1E5;
 }
 
-#save-reminder-btn:hover, #close-reminder-btn:hover {
+#stop-audio-btn {
+    background-color: #3a2523;
+    color: #FFB3B3;
+}
+
+#save-reminder-btn:hover, #close-reminder-btn:hover, #stop-audio-btn:hover {
     background-color: #4A4A4A;
     transform: translateY(-1px);
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+}
+
+#stop-audio-btn:hover {
+    background-color: #5C1130;
+    color: #fff;
 }
 
 @media (max-width: 700px) {

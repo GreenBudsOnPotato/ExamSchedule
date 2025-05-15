@@ -855,7 +855,7 @@ input:checked + .slider:before {
     border-radius: 0 0 4px 4px;
 }
 
-#save-reminder-btn, #close-reminder-btn {
+#save-reminder-btn, #close-reminder-btn, #stop-audio-btn {
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 14px;
@@ -866,6 +866,9 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: 8px;
+    background-color: #e3f2fd;
+    color: #1565c0;
+    box-shadow: none;
 }
 
 #save-reminder-btn {
@@ -878,10 +881,20 @@ input:checked + .slider:before {
     color: #1565c0;
 }
 
-#save-reminder-btn:hover, #close-reminder-btn:hover {
+#stop-audio-btn {
+    background-color: #ffcdd2;
+    color: #c62828;
+}
+
+#save-reminder-btn:hover, #close-reminder-btn:hover, #stop-audio-btn:hover {
     background-color: #90caf9;
     transform: none;
     box-shadow: none;
+}
+
+#stop-audio-btn:hover {
+    background-color: #ef9a9a;
+    color: #fff;
 }
 
 /* 导出按钮样式 */
