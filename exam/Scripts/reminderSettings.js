@@ -6,7 +6,7 @@ function addReminder() {
     row.innerHTML = `
         <td>
             <select class="reminder-select">
-                <option value="beforeStart">当距离考试开始时间还有</option>
+                <option value="beforeStart" selected>当距离考试开始时间还有</option>
                 <option value="beforeEnd">当距离考试结束时间还有</option>
                 <option value="afterEnd">当考试结束后</option>
                 <option value="start">当考试开始时</option>
@@ -34,11 +34,12 @@ function addReminder() {
             inputCell.innerHTML = `<input type="number" class="reminder-time-input" placeholder="分钟">`;
         }
     });
-    // 音频选项填充（含不可用标记）
+    // 音频选项填充（含不可用标记），每次都刷新
     fetch('audio_files.json')
         .then(response => response.json())
         .then(audioFiles => {
             const select = row.cells[2].querySelector('select');
+            select.innerHTML = ''; // 确保每次都清空
             Object.keys(audioFiles).forEach(type => {
                 var option = document.createElement('option');
                 option.value = type;
@@ -66,6 +67,20 @@ function removeReminder(button) {
 
 function saveConfig() {
     try {
+        // 新增：保存启用提醒总开关
+        const reminderEnable = document.getElementById('reminder-enable-toggle').checked;
+        setCookie("reminderEnable", reminderEnable, 365);
+
+        if (!reminderEnable) {
+            // 关闭提醒时清空提醒队列
+            setCookie("examReminders", encodeURIComponent("[]"), 365);
+            errorSystem.show('提醒功能已禁用');
+            return;
+        }
+
+        if (!validateReminders()) {
+            return;
+        }
         var table = document.getElementById('reminderTable');
         var reminders = [];
         for (var i = 1; i < table.rows.length - 1; i++) {
@@ -99,11 +114,7 @@ function saveConfig() {
                 });
             }
         }
-        if (reminders.length === 0) {
-            errorSystem.show('请添加至少一个提醒策略');
-            return;
-        }
-        // 保存到 Cookie 并更新提醒队列
+        // 允许为空时保存
         setCookie("examReminders", encodeURIComponent(JSON.stringify(reminders)), 365);
         loadRemindersToQueue(reminders);
         errorSystem.show('提醒设置已保存');
@@ -216,6 +227,23 @@ function validateReminders() {
 
 // 页面加载时自动填充提醒表格
 document.addEventListener("DOMContentLoaded", () => {
+    // 新增：同步启用提醒总开关
+    const reminderEnableToggle = document.getElementById('reminder-enable-toggle');
+    const reminderEnableCookie = getCookie("reminderEnable");
+    reminderEnableToggle.checked = reminderEnableCookie === null ? true : (reminderEnableCookie === "true");
+
+    // 切换开关时禁用/启用表格和导出按钮
+    function updateReminderTableState() {
+        const disabled = !reminderEnableToggle.checked;
+        document.getElementById('reminderTable').querySelectorAll('input,select,button').forEach(el => {
+            if (el.id === 'reminder-enable-toggle' || el.id === 'export-config-btn') return;
+            el.disabled = disabled;
+        });
+        document.getElementById('export-config-btn').disabled = disabled;
+    }
+    reminderEnableToggle.addEventListener('change', updateReminderTableState);
+    setTimeout(updateReminderTableState, 0);
+
     // 加载提醒设置
     const reminderCookie = getCookie("examReminders");
     if (reminderCookie) {
@@ -235,9 +263,9 @@ document.addEventListener("DOMContentLoaded", () => {
                             reminder.audio = defaultAudio;
                         }
                         var row = table.insertRow(table.rows.length - 1);
+                        // 音频选项每次都刷新
                         let audioOptions = validAudioTypes
                             .map(audio => {
-                                // 检查可用性
                                 let text = audio;
                                 var audioObj = new Audio(audioFiles[audio]);
                                 audioObj.addEventListener('error', function() {
@@ -297,5 +325,50 @@ document.addEventListener("DOMContentLoaded", () => {
                     loadRemindersToQueue(reminders);
                 });
         }
+    }
+    // 导出按钮事件
+    const exportBtn = document.getElementById('export-config-btn');
+    if (exportBtn) {
+        exportBtn.addEventListener('click', exportConfig);
+    }
+    // 监听类型选择变化，动态切换文本框可编辑状态
+    document.getElementById('reminderTable').addEventListener('change', function(e) {
+        if (e.target && e.target.classList.contains('reminder-type-select')) {
+            const row = e.target.closest('tr');
+            const timeInput = row.querySelector('.reminder-time-input');
+            const val = e.target.value;
+            if (val === "beforeStart" || val === "beforeEnd" || val === "afterExam") {
+                timeInput.removeAttribute('readonly');
+                timeInput.removeAttribute('disabled');
+            } else {
+                timeInput.setAttribute('readonly', 'readonly');
+                timeInput.setAttribute('disabled', 'disabled');
+            }
+        }
+    });
+
+    // 拦截关闭按钮
+    const closeBtn = document.getElementById('close-reminder-btn');
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function(e) {
+            if (!validateReminders()) {
+                e.preventDefault();
+                // 阻止关闭弹窗，需配合reminderModal.js
+                window.__reminderCloseBlocked = true;
+                return;
+            }
+            window.__reminderCloseBlocked = false;
+            // ...existing code for关闭弹窗...
+        });
+    }
+
+    // 添加停止音频按钮事件
+    const stopAudioBtn = document.getElementById('stop-audio-btn');
+    if (stopAudioBtn) {
+        stopAudioBtn.addEventListener('click', function() {
+            if (window.audioController && typeof window.audioController.stop === 'function') {
+                window.audioController.stop();
+            }
+        });
     }
 });

@@ -54,8 +54,9 @@
             gap: 16px;
             min-width: 200px;
             text-align: center;
-            min-height: 140px; /* 增加高度以适应副标题 */
+            min-height: 140px;
             flex: 1;
+            box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
         }
 
         ul a:hover {
@@ -171,15 +172,6 @@
             width: 100%;
             text-align: center;
         }
-
-        /* 添加新样式 */
-        .subtitle {
-            font-size: 14px;
-            color: #CAC4D0;
-            margin-top: 4px;
-            width: 100%;
-            text-align: center;
-        }
     </style>
 </head>
 
@@ -189,10 +181,10 @@
         ExamSchedule
     </div>
     <ul>
-        <li><a href="./time/"><span class="material-icons">schedule</span>电子钟表</a></li>
-        <li><a href="./exam/"><span class="material-icons">dashboard</span>考试管理
-            <div class="subtitle">看板 & 广播</div>
-        </a></li>
+        <li><a href="./time/"><span class="material-symbols-outlined">schedule</span>电子钟表</a></li>
+        <li><a href="./exam/"><span class="material-symbols-outlined">dashboard</span>考试管理
+                <div class="subtitle">看板 & 广播</div>
+            </a></li>
     </ul>
 
     <div class="top-right-links">
