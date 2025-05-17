@@ -67,7 +67,7 @@
         },
         {
             "condition": "beforeStart",
-            "time": "0",
+            "time": 0,
             "audio": "考试开始"
         },
         {
@@ -82,7 +82,7 @@
         },
         {
             "condition": "end",
-            "time": "0",
+            "time": 0,
             "audio": "考试结束"
         },
         {
