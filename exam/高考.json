@@ -43,5 +43,57 @@
             "start": "2025-06-09T17:00:00",
             "end": "2025-06-09T18:15:00"
         }
+    ],
+    "examReminders": [
+        {
+            "condition": "beforeStart",
+            "time": "45",
+            "audio": "进场"
+        },
+        {
+            "condition": "beforeStart",
+            "time": "15",
+            "audio": "验视答题卡袋"
+        },
+        {
+            "condition": "beforeStart",
+            "time": "10",
+            "audio": "验视试题卷袋"
+        },
+        {
+            "condition": "beforeStart",
+            "time": "5",
+            "audio": "分发试题卷"
+        },
+        {
+            "condition": "beforeStart",
+            "time": "0",
+            "audio": "考试开始"
+        },
+        {
+            "condition": "beforeEnd",
+            "time": "30",
+            "audio": "距离结束还有30分钟"
+        },
+        {
+            "condition": "beforeEnd",
+            "time": "15",
+            "audio": "距离结束还有15分钟"
+        },
+        {
+            "condition": "end",
+            "time": "0",
+            "audio": "考试结束"
+        },
+        {
+            "condition": "afterEnd",
+            "time": "8",
+            "audio": "预备铃"
+        },
+        {
+            "condition": "afterEnd",
+            "time": "10",
+            "audio": "上课铃"
+        }
     ]
 }
